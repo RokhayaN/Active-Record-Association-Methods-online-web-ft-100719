@@ -14,6 +14,10 @@ class Song < ActiveRecord::Base
     #binding.pry 
     if Artist.all.any?{|artist| artist.name == "Drake"} 
     Artist.all.each do |artist|
+      if artist.name == "Drake"
+        self.artist = artist
+      end 
+    end 
     else 
       
       self.artist =Artist.create(name: "Drake")
